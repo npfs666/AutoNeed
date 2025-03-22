@@ -16,13 +16,13 @@ BMLoot:SetScript("OnEvent", function()
         end
 		
 		-- Autoloot ZG 
-		if GetZoneText() == "Zul'Gurub" and ( string.find(name ,"Hakkari Bijou") or string.find(name ,"Coin") ) then
+		else if GetZoneText() == "Zul'Gurub" and ( string.find(name ,"Hakkari Bijou") or string.find(name ,"Coin") ) then
             RollOnLoot(rollID, 1)
 			StaticPopup1Button1:Click()		
         end
 		
 		-- Autoloot Scourgestone
-		if (GetZoneText() == "Stratholme" or GetZoneText() == "Scholomance") and name == "Corruptor's Scourgestone" then
+		else if (GetZoneText() == "Stratholme" or GetZoneText() == "Scholomance") and name == "Corruptor's Scourgestone" then
             RollOnLoot(rollID, 1)
 			StaticPopup1Button1:Click()		
         end
@@ -34,11 +34,11 @@ BMLoot:SetScript("OnEvent", function()
 			DEFAULT_CHAT_FRAME:AddMessage("You have entered "..GetRealZoneText().." auto-needing on Corrupted Sands")
 		end
 		
-		if GetRealZoneText() == "Zul'Gurub" then
+		else if GetRealZoneText() == "Zul'Gurub" then
 			DEFAULT_CHAT_FRAME:AddMessage("You have entered "..GetRealZoneText().." auto-needing on Coins and Bijous")
 		end
 		
-		if (GetRealZoneText() == "Stratholme" or GetZoneText() == "Scholomance") then
+		else if (GetRealZoneText() == "Stratholme" or GetZoneText() == "Scholomance") then
 			DEFAULT_CHAT_FRAME:AddMessage("You have entered "..GetRealZoneText().." auto-needing on Corruptor's Scourgestones")
 		end
 	end

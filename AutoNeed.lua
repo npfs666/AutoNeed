@@ -13,33 +13,32 @@ BMLoot:SetScript("OnEvent", function()
         if GetZoneText() == "The Black Morass" and (name == "Corrupted Sand") then
             RollOnLoot(rollID, 1)
 			StaticPopup1Button1:Click()		
-        end
-		
+        
 		-- Autoloot ZG 
-		else if GetZoneText() == "Zul'Gurub" and ( string.find(name ,"Hakkari Bijou") or string.find(name ,"Coin") ) then
+		elseif GetZoneText() == "Zul'Gurub" and ( string.find(name ,"Hakkari Bijou") or string.find(name ,"Coin") ) then
             RollOnLoot(rollID, 1)
 			StaticPopup1Button1:Click()		
-        end
-		
+        
 		-- Autoloot Scourgestone
-		else if (GetZoneText() == "Stratholme" or GetZoneText() == "Scholomance") and name == "Corruptor's Scourgestone" then
+		elseif (GetZoneText() == "Stratholme" or GetZoneText() == "Scholomance") and name == "Corruptor's Scourgestone" then
             RollOnLoot(rollID, 1)
 			StaticPopup1Button1:Click()		
         end
-		
+	
 		
 	elseif event == "ZONE_CHANGED_NEW_AREA" then
 	
 		if GetRealZoneText() == "The Black Morass" then
 			DEFAULT_CHAT_FRAME:AddMessage("You have entered "..GetRealZoneText().." auto-needing on Corrupted Sands")
-		end
 		
-		else if GetRealZoneText() == "Zul'Gurub" then
+		
+		elseif GetRealZoneText() == "Zul'Gurub" then
 			DEFAULT_CHAT_FRAME:AddMessage("You have entered "..GetRealZoneText().." auto-needing on Coins and Bijous")
-		end
 		
-		else if (GetRealZoneText() == "Stratholme" or GetZoneText() == "Scholomance") then
+		
+		elseif (GetRealZoneText() == "Stratholme" or GetZoneText() == "Scholomance") then
 			DEFAULT_CHAT_FRAME:AddMessage("You have entered "..GetRealZoneText().." auto-needing on Corruptor's Scourgestones")
 		end
+
 	end
 end)

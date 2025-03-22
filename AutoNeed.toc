@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: AutoNeed
+## Author: Gaou
+## Notes: Autoneed on Sand, bijou, coins and scourgestone
+## Version: 0.0001
+
+AutoNeed.lua
